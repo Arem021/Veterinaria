@@ -15,9 +15,9 @@ public class CitaModel {
     @Column(name = "ID_CITA")
     private Integer idCita;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "ID_MASCOTA")
-    private Integer idMascota;
+    private MascotasModel idMascota;
 
     @Column(name = "FECHA_CITA")
     private LocalDateTime fechaCita;

@@ -23,14 +23,14 @@ public class VacunaModel {
     private String descripcion;
 
     @Column(name = "FECHA_APLICACION")
-    private LocalDateTime fechaAplicacion = LocalDateTime.now();
+    private LocalDateTime fechaAplicacion;
 
     @Column(name = "PROXIMA_APLICACION")
     private LocalDateTime proximaAplicacion;
 
     @ManyToOne
     @JoinColumn(name = "ID_MASCOTA")
-    private Integer idMascota;
+    private MascotasModel mascota;
 
     @Column(name = "ESTADO")
     private Integer estado = 1;

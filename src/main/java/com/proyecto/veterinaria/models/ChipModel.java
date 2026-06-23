@@ -15,18 +15,18 @@ public class ChipModel {
     @Column(name = "ID_CHIP")
     private Integer chip;
 
-    @Column(name = "CODIGO_CHIP")
+    @Column(name = "CODIGO_CHIP", unique = true)
     private Integer codigoChip;
 
     @Column(name = "FECHA_IMPLEMENTACION")
-    private LocalDateTime fechaImplementacion = LocalDateTime.now();
+    private LocalDateTime fechaImplementacion;
 
     @Column(name = "FABRICANTE")
-    private Integer fabricante;
+    private String fabricante;
 
     @OneToOne
     @JoinColumn(name = "ID_MASCOTA")
-    private Integer idMascota;
+    private MascotasModel mascota;
 
     @Column(name = "ESTADO")
     private Integer estado = 1;

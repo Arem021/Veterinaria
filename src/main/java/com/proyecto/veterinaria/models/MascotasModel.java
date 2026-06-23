@@ -11,9 +11,9 @@ import java.time.LocalDateTime;
 public class MascotasModel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_mascotas")
-    @SequenceGenerator(name = "seq_mascotas", sequenceName = "seq_name", allocationSize = 1)
+    @SequenceGenerator(name = "seq_mascotas", sequenceName = "seq_mascotas", allocationSize = 1)
     @Column(name = "ID_MASCOTA")
-    private Integer idMascotas;
+    private Integer idMascota;
 
     @Column(name = "NOMBRE")
     private String nombre;
@@ -34,11 +34,11 @@ public class MascotasModel {
     private LocalDateTime fechaIngreso = LocalDateTime.now();
 
     @Column(name = "FECHA_ADOPCION")
-    private LocalDateTime fechaAdopcion = LocalDateTime.now();
+    private LocalDateTime fechaAdopcion;
 
     @ManyToOne
     @JoinColumn (name = "ID_ADOPTANTE")
-    private Integer idAdoptante = 1;
+    private AdoptanteModel adoptante ;
 
     @Column(name = "ESTADO")
     private Integer estado = 1 ;

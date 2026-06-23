@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface CitaRepository extends JpaRepository<CitaModel, Integer> {
     List<CitaModel> findByEstado(Integer estado);
+    List<CitaModel> findByIdMascota_IdMascotaAndEstado(Integer idMascota, Integer estado);
 }

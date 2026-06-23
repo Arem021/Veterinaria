@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface ChipRepository extends JpaRepository<ChipModel, Integer> {
-    List<ChipModel>findByEstado(Integer estado);
+    List<ChipModel> findByEstado(Integer estado);
+
+    List<ChipModel> findByMascotaIdMascotaAndEstado(Integer idMascota, Integer estado);
 }
